@@ -4,3 +4,6 @@ app/build/
 *.keystore
 local.properties
 .gradle/
+
+# v1.4.0: 内置 JRE 大资产(单文件>100MB 不入 git, 由 Release 源码包提供)
+app/src/main/assets/runtime/jre/
