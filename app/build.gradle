@@ -10,8 +10,18 @@ android {
         applicationId "com.nebula.launcher"
         minSdk 21
         targetSdk 34
-        versionCode 3
-        versionName "1.3.0"
+        versionCode 4
+        versionName "1.4.0"
+        ndk {
+            abiFilters 'arm64-v8a', 'armeabi-v7a', 'x86', 'x86_64'
+        }
+    }
+
+    packagingOptions {
+        // 内置 JRE/渲染栈 so 全部解压到 nativeLibraryDir
+        jniLibs {
+            useLegacyPackaging = true
+        }
     }
 
     compileOptions {

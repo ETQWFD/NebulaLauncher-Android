@@ -57,7 +57,7 @@ import java.util.Map;
 import java.util.UUID;
 
 /**
- * 星云启动器 · 手机版 v1.3.0（Nebula Launcher Android）
+ * 星云启动器 · 手机版 v1.4.0（Nebula Launcher Android）
  * 自有代码，参照 PCL/FCL 手机版结构与电脑版功能缩减实现：
  *   启动（真实运行栈启动流程）· 版本下载安装 · 模组/整合包/光影下载
  *   三账号 · 设置（主题/文字/内存/镜像/检测更新/开发者选项/日志）
@@ -150,7 +150,7 @@ public class MainActivity extends Activity {
         buildUI();
         refreshInstalled();
         refreshManifest();
-        log("启动器已启动 v1.3.0");
+        log("启动器已启动 v1.4.0");
     }
 
     void applyWindow() {
@@ -200,7 +200,7 @@ public class MainActivity extends Activity {
                         "运行栈已就绪，可直接启动游戏", "日志已清空", "缓存已清空", "版本", "官网", "源码", "游戏目录", "启动命令", "复制", "安装完成",
                         "安装失败", "下载失败", "获取失败", "搜索失败", "请输入关键词", "版本清单尚未加载，请稍候", "请先安装一个版本",
                         "请填写服务器地址与密码", "启动准备失败", "当前版本 ", "最新版本 ", "点击打开", "确定", "内存", "集成包安装完成",
-                        "模组下载完成", "光影已安装", "已安装光影", "游戏与启动命令已就绪。Android 端运行 Java 版游戏需要「Java 运行栈」组件（开源运行时，FCL 等均依赖它）。请从官网下载运行栈后即可进入游戏。", "打开官网", "知道了", "正在检查运行栈…", "等待运行栈下载", "启动中…", "游戏已启动，启动器自动让位", "搜索"},
+                        "模组下载完成", "光影已安装", "已安装光影", "游戏与启动命令已就绪。Android 端运行 Java 版游戏需要「Java 运行栈」组件（开源运行时，FCL 等均依赖它）。请从官网下载运行栈后即可进入游戏。", "打开官网", "知道了", "正在检查运行栈…", "等待运行栈下载", "启动中…", "游戏已启动，启动器自动让位", "搜索", "正在安装内置 Java 运行时（首次约 10 秒）…", "内置运行时安装失败"},
                 {"en", "Launch", "Versions", "Mods", "Settings", "Version", "No version installed", "Memory", "Account", "Offline", "Custom server", "Microsoft",
                         "Username", "authlib server URL (skin)", "Server password", "Sign in (Microsoft device code)", "Not signed in", "Launch Game", "Ready",
                         "Install new version", "Refresh", "Choose version to install (vanilla)", "Cancel", "Installed", "GitHub", "Modrinth", "Modpack", "Shaders", "Search…",
@@ -212,7 +212,7 @@ public class MainActivity extends Activity {
                         "Runtime ready, you can launch", "Logs cleared", "Cache cleared", "Version", "Website", "Source", "Game dir", "Launch command", "Copy", "Installed",
                         "Install failed", "Download failed", "Fetch failed", "Search failed", "Enter a keyword", "Version list not loaded yet", "Install a version first",
                         "Fill server URL and password", "Launch prepare failed", "Current ", "Latest ", "Open", "OK", "Memory", "Modpack installed",
-                        "Mod downloaded", "Shader installed", "Installed shaders", "Game files and launch command ready. Android needs the Java runtime stack (open-source, used by FCL etc.) to run Java Edition. Download it from the website.", "Open website", "Got it", "Checking runtime…", "Waiting for runtime download", "Launching…", "Game started, launcher yielded", "Search"},
+                        "Mod downloaded", "Shader installed", "Installed shaders", "Game files and launch command ready. Android needs the Java runtime stack (open-source, used by FCL etc.) to run Java Edition. Download it from the website.", "Open website", "Got it", "Checking runtime…", "Waiting for runtime download", "Launching…", "Game started, launcher yielded", "Search", "Installing built-in Java runtime (first run, ~10s)…", "Built-in runtime install failed"},
                 {"ja", "起動", "バージョン", "Mod", "設定", "バージョン選択", "未インストール", "メモリ割当", "アカウント", "オフライン", "カスタムサーバー", "正版（Microsoft）",
                         "ユーザー名", "authlib サーバー URL（スキン）", "サーバーパスワード", "正版ログイン（デバイスコード）", "未ログイン", "ゲームを起動", "準備完了",
                         "新バージョンをインストール", "更新", "インストールするバージョンを選択", "キャンセル", "インストール済み", "GitHub", "Modrinth", "統合パック", "シェーダー", "検索…",
@@ -224,7 +224,7 @@ public class MainActivity extends Activity {
                         "ランタイム準備完了", "ログ消去済み", "キャッシュ消去済み", "バージョン", "公式サイト", "ソース", "ゲームディレクトリ", "起動コマンド", "コピー", "インストール済み",
                         "インストール失敗", "ダウンロード失敗", "取得失敗", "検索失敗", "キーワードを入力", "バージョン一覧未読込", "先にバージョンをインストール",
                         "サーバー URL とパスワードを入力", "起動準備失敗", "現在 ", "最新 ", "開く", "OK", "メモリ", "統合パック導入完了",
-                        "Mod 導入完了", "シェーダー導入完了", "導入済みシェーダー", "ゲームファイルと起動コマンドが準備できました。Java 版の実行には「Java ランタイム」が必要です（FCL 等も依存）。公式サイトから入手してください。", "公式サイトを開く", "了解", "ランタイム確認中…", "ランタイム待機中", "起動中…", "ゲーム起動、ランチャーは自動で譲ります", "検索"},
+                        "Mod 導入完了", "シェーダー導入完了", "導入済みシェーダー", "ゲームファイルと起動コマンドが準備できました。Java 版の実行には「Java ランタイム」が必要です（FCL 等も依存）。公式サイトから入手してください。", "公式サイトを開く", "了解", "ランタイム確認中…", "ランタイム待機中", "起動中…", "ゲーム起動、ランチャーは自動で譲ります", "検索", "内蔵Javaランタイムをインストール中（初回約10秒）…", "内蔵ランタイムのインストールに失敗"},
                 {"ko", "시작", "버전", "모드", "설정", "버전 선택", "설치된 버전 없음", "메모리 할당", "계정", "오프라인", "커스텀 서버", "정품 (Microsoft)",
                         "닉네임", "authlib 서버 URL (스킨)", "서버 비밀번호", "정품 로그인 (기기 코드)", "로그인 안 됨", "게임 시작", "준비됨",
                         "새 버전 설치", "새로고침", "설치할 버전 선택", "취소", "설치됨", "GitHub", "Modrinth", "통합팩", "셰이더", "검색…",
@@ -236,7 +236,7 @@ public class MainActivity extends Activity {
                         "런타임 준비 완료", "로그 삭제됨", "캐시 삭제됨", "버전", "공식 사이트", "소스", "게임 폴더", "시작 명령", "복사", "설치됨",
                         "설치 실패", "다운로드 실패", "가져오기 실패", "검색 실패", "키워드를 입력하세요", "버전 목록 미로드", "먼저 버전을 설치하세요",
                         "서버 URL과 비밀번호 입력", "시작 준비 실패", "현재 ", "최신 ", "열기", "확인", "메모리", "통합팩 설치 완료",
-                        "모드 다운로드 완료", "셰이더 설치됨", "설치된 셰이더", "게임 파일과 시작 명령이 준비되었습니다. Java 에디션 실행에는 「Java 런타임」이 필요합니다 (FCL 등도 의존). 공식 사이트에서 받으세요.", "공식 사이트 열기", "알겠음", "런타임 확인 중…", "런타임 대기 중", "시작 중…", "게임 시작, 런처는 자동 양보", "검색"},
+                        "모드 다운로드 완료", "셰이더 설치됨", "설치된 셰이더", "게임 파일과 시작 명령이 준비되었습니다. Java 에디션 실행에는 「Java 런타임」이 필요합니다 (FCL 등도 의존). 공식 사이트에서 받으세요.", "공식 사이트 열기", "알겠음", "런타임 확인 중…", "런타임 대기 중", "시작 중…", "게임 시작, 런처는 자동 양보", "검색", "내장 Java 런타임 설치 중 (최초 약 10초)…", "내장 런타임 설치 실패"},
                 {"fr", "Lancer", "Versions", "Mods", "Réglages", "Version", "Aucune version installée", "Mémoire", "Compte", "Hors ligne", "Serveur personnalisé", "Microsoft",
                         "Pseudo", "URL serveur authlib (skin)", "Mot de passe serveur", "Connexion (code d'appareil)", "Non connecté", "Lancer le jeu", "Prêt",
                         "Installer une version", "Actualiser", "Choisir une version à installer", "Annuler", "Installés", "GitHub", "Modrinth", "Modpack", "Shaders", "Rechercher…",
@@ -248,7 +248,7 @@ public class MainActivity extends Activity {
                         "Runtime prêt, vous pouvez lancer", "Logs vidés", "Cache vidé", "Version", "Site", "Source", "Dossier du jeu", "Commande de lancement", "Copier", "Installé",
                         "Échec installation", "Échec téléchargement", "Échec récupération", "Échec recherche", "Entrez un mot-clé", "Liste des versions non chargée", "Installez d'abord une version",
                         "Saisissez URL et mot de passe", "Échec préparation", "Actuelle ", "Dernière ", "Ouvrir", "OK", "Mémoire", "Modpack installé",
-                        "Mod téléchargé", "Shader installé", "Shaders installés", "Fichiers du jeu et commande prêts. Android nécessite le « runtime Java » (open-source, utilisé par FCL etc.) pour exécuter Java Edition. Téléchargez-le sur le site.", "Ouvrir le site", "Compris", "Vérification du runtime…", "Attente du runtime", "Lancement…", "Jeu lancé, le lanceur cède", "Rechercher"},
+                        "Mod téléchargé", "Shader installé", "Shaders installés", "Fichiers du jeu et commande prêts. Android nécessite le « runtime Java » (open-source, utilisé par FCL etc.) pour exécuter Java Edition. Téléchargez-le sur le site.", "Ouvrir le site", "Compris", "Vérification du runtime…", "Attente du runtime", "Lancement…", "Jeu lancé, le lanceur cède", "Rechercher", "Installation du runtime Java intégré (1re fois ~10s)…", "Échec installation runtime intégré"},
                 {"de", "Starten", "Versionen", "Mods", "Einstellungen", "Version", "Keine Version installiert", "Speicher", "Konto", "Offline", "Benutzerdefinierter Server", "Microsoft",
                         "Benutzername", "authlib Server-URL (Skin)", "Server-Passwort", "Anmelden (Gerätecode)", "Nicht angemeldet", "Spiel starten", "Bereit",
                         "Neue Version installieren", "Aktualisieren", "Zu installierende Version wählen", "Abbrechen", "Installiert", "GitHub", "Modrinth", "Modpack", "Shader", "Suchen…",
@@ -260,7 +260,7 @@ public class MainActivity extends Activity {
                         "Runtime bereit, Spiel kann starten", "Logs geleert", "Cache geleert", "Version", "Website", "Quellcode", "Spielordner", "Startbefehl", "Kopieren", "Installiert",
                         "Installation fehlgeschlagen", "Download fehlgeschlagen", "Abruf fehlgeschlagen", "Suche fehlgeschlagen", "Stichwort eingeben", "Versionsliste nicht geladen", "Zuerst Version installieren",
                         "Server-URL und Passwort eingeben", "Startvorbereitung fehlgeschlagen", "Aktuell ", "Neueste ", "Öffnen", "OK", "Speicher", "Modpack installiert",
-                        "Mod heruntergeladen", "Shader installiert", "Installierte Shader", "Spieldateien und Startbefehl bereit. Android benötigt den „Java-Runtime“-Stack (Open-Source, auch von FCL verwendet), um Java Edition auszuführen. Von der Website laden.", "Website öffnen", "Verstanden", "Runtime wird geprüft…", "Warte auf Runtime", "Starte…", "Spiel gestartet, Launcher tritt ab", "Suchen"},
+                        "Mod heruntergeladen", "Shader installiert", "Installierte Shader", "Spieldateien und Startbefehl bereit. Android benötigt den „Java-Runtime“-Stack (Open-Source, auch von FCL verwendet), um Java Edition auszuführen. Von der Website laden.", "Website öffnen", "Verstanden", "Runtime wird geprüft…", "Warte auf Runtime", "Starte…", "Spiel gestartet, Launcher tritt ab", "Suchen", "Integriertes Java-Runtime wird installiert (erste ~10s)…", "Integriertes Runtime-Installation fehlgeschlagen"},
                 {"es", "Iniciar", "Versiones", "Mods", "Ajustes", "Versión", "Sin versión instalada", "Memoria", "Cuenta", "Sin conexión", "Servidor personalizado", "Microsoft",
                         "Usuario", "URL servidor authlib (skin)", "Contraseña del servidor", "Iniciar sesión (código de dispositivo)", "No conectado", "Iniciar juego", "Listo",
                         "Instalar nueva versión", "Actualizar", "Elegir versión a instalar", "Cancelar", "Instalados", "GitHub", "Modrinth", "Modpack", "Shaders", "Buscar…",
@@ -272,7 +272,7 @@ public class MainActivity extends Activity {
                         "Runtime listo, puedes iniciar", "Registros vaciados", "Caché vaciada", "Versión", "Sitio", "Fuente", "Carpeta del juego", "Comando de inicio", "Copiar", "Instalado",
                         "Error de instalación", "Error de descarga", "Error de obtención", "Error de búsqueda", "Introduce una palabra clave", "Lista de versiones no cargada", "Instala primero una versión",
                         "Introduce URL y contraseña", "Error de preparación", "Actual ", "Última ", "Abrir", "Aceptar", "Memoria", "Modpack instalado",
-                        "Mod descargado", "Shader instalado", "Shaders instalados", "Archivos del juego y comando listos. Android necesita el stack «Java runtime» (código abierto, usado por FCL etc.) para ejecutar Java Edition. Descárgalo del sitio.", "Abrir sitio", "Entendido", "Comprobando runtime…", "Esperando runtime", "Iniciando…", "Juego iniciado, el lanzador cede", "Buscar"},
+                        "Mod descargado", "Shader instalado", "Shaders instalados", "Archivos del juego y comando listos. Android necesita el stack «Java runtime» (código abierto, usado por FCL etc.) para ejecutar Java Edition. Descárgalo del sitio.", "Abrir sitio", "Entendido", "Comprobando runtime…", "Esperando runtime", "Iniciando…", "Juego iniciado, el lanzador cede", "Buscar", "Instalando runtime Java integrado (1ª vez ~10s)…", "Fallo al instalar runtime integrado"},
                 {"ru", "Запуск", "Версии", "Моды", "Настройки", "Версия", "Версия не установлена", "Память", "Аккаунт", "Офлайн", "Свой сервер", "Microsoft",
                         "Имя игрока", "URL сервера authlib (скин)", "Пароль сервера", "Вход (код устройства)", "Не вошёл", "Запустить игру", "Готово",
                         "Установить версию", "Обновить", "Выберите версию для установки", "Отмена", "Установлено", "GitHub", "Modrinth", "Сборки", "Шейдеры", "Поиск…",
@@ -284,7 +284,7 @@ public class MainActivity extends Activity {
                         "Рантайм готов, можно запускать", "Журнал очищен", "Кэш очищен", "Версия", "Сайт", "Исходный код", "Папка игры", "Команда запуска", "Копировать", "Установлено",
                         "Ошибка установки", "Ошибка загрузки", "Ошибка получения", "Ошибка поиска", "Введите ключевое слово", "Список версий не загружен", "Сначала установите версию",
                         "Введите URL и пароль сервера", "Ошибка подготовки", "Текущая ", "Последняя ", "Открыть", "OK", "Память", "Сборка установлена",
-                        "Мод скачан", "Шейдер установлен", "Установленные шейдеры", "Файлы игры и команда готовы. Для Java Edition на Android нужен стек «Java runtime» (открытый код, используется FCL и др.). Скачайте с сайта.", "Открыть сайт", "Понятно", "Проверка рантайма…", "Ожидание рантайма", "Запуск…", "Игра запущена, лаунчер уступает", "Поиск"},
+                        "Мод скачан", "Шейдер установлен", "Установленные шейдеры", "Файлы игры и команда готовы. Для Java Edition на Android нужен стек «Java runtime» (открытый код, используется FCL и др.). Скачайте с сайта.", "Открыть сайт", "Понятно", "Проверка рантайма…", "Ожидание рантайма", "Запуск…", "Игра запущена, лаунчер уступает", "Поиск", "Установка встроенного рантайма Java (первый ~10с)…", "Ошибка установки встроенного рантайма"},
         };
         for (String[] r : rows) {
             Map<String, String> m = new HashMap<>();
@@ -298,7 +298,7 @@ public class MainActivity extends Activity {
                     "arch", "arch_val", "runtime_missing", "runtime_ok", "log_cleared", "cache_cleared", "about_ver", "site", "source", "game_dir", "launch_cmd", "copy", "installed",
                     "install_fail", "download_fail", "fetch_fail", "search_fail", "need_keyword", "list_not_loaded", "install_first",
                     "need_custom", "launch_prepare_fail", "cur_ver", "latest_ver", "open", "ok", "mem_mb", "modpack_done",
-                    "mod_done", "shader_done", "shaders_title", "launch_info", "open_site", "got_it", "checking_runtime", "wait_runtime", "launching", "launched_yield", "search"};
+                    "mod_done", "shader_done", "shaders_title", "launch_info", "open_site", "got_it", "checking_runtime", "wait_runtime", "launching", "launched_yield", "search", "installing_runtime", "runtime_install_fail"};
             for (int i = 1; i < r.length; i++) m.put(keys[i - 1], r[i]);
             STRINGS.put(r[0], m);
         }
@@ -365,7 +365,7 @@ public class MainActivity extends Activity {
         top.setGravity(Gravity.CENTER_VERTICAL);
         top.setPadding((int) dp(16), (int) dp(10), (int) dp(16), (int) dp(10));
         TextView logo = mkText("星云启动器", 20, c(4), 1);
-        TextView sub = mkText("Nebula Launcher · v1.3.0", 11, c(5), 0);
+        TextView sub = mkText("Nebula Launcher · v1.4.0", 11, c(5), 0);
         sub.setPadding((int) dp(12), 0, 0, 0);
         top.addView(logo);
         top.addView(sub);
@@ -760,7 +760,7 @@ public class MainActivity extends Activity {
         // 关于
         LinearLayout g5 = card();
         g5.addView(mkText(tr("cat_about"), 13, c(3), 1));
-        tvVersionInfo = mkText(tr("about_ver") + " 1.3.0", 14, c(4), 0);
+        tvVersionInfo = mkText(tr("about_ver") + " 1.4.0", 14, c(4), 0);
         g5.addView(tvVersionInfo);
         g5.addView(settingRow(tr("game_dir"), mcDir.getAbsolutePath(), v -> toast(mcDir.getAbsolutePath())));
         g5.addView(settingRow(tr("site"), "etqwfd.github.io/NebulaLauncher", v -> openUrl("https://etqwfd.github.io/NebulaLauncher/")));
@@ -852,12 +852,12 @@ public class MainActivity extends Activity {
                 runOnUiThread(() -> {
                     btnUpdateCheck.setEnabled(true);
                     btnUpdateCheck.setText(tr("update_check"));
-                    if (tag.isEmpty() || tag.equalsIgnoreCase("v1.3.0")) {
+                    if (tag.isEmpty() || tag.equalsIgnoreCase("v1.4.0")) {
                         toast(tr("update_latest"));
                     } else {
                         new AlertDialog.Builder(this)
                                 .setTitle(tr("update_new") + tag)
-                                .setMessage(tr("cur_ver") + "1.3.0 · " + tr("latest_ver") + tag)
+                                .setMessage(tr("cur_ver") + "1.4.0 · " + tr("latest_ver") + tag)
                                 .setPositiveButton(tr("update_go"), (d, w) -> openUrl(url))
                                 .setNegativeButton(tr("cancel"), null)
                                 .show();
@@ -875,20 +875,25 @@ public class MainActivity extends Activity {
 
     void checkRunStack() {
         new Thread(() -> {
-            final File jre = new File(mcDir, "runtime/jre/bin/java");
-            final boolean ok = jre.exists();
+            // v1.4.0：内置 JRE21 运行时随 APK 内置，无需用户下载
+            final RuntimeInstaller ri = new RuntimeInstaller(this);
+            final boolean ok = ri.jreInstalled();
             runOnUiThread(() -> {
                 if (ok) {
                     toast(tr("runtime_ok"));
-                    log("运行栈检测：已就绪");
+                    log("运行栈检测：内置运行时已就绪（JRE21）");
                 } else {
-                    log("运行栈检测：未安装");
-                    new AlertDialog.Builder(this)
-                            .setTitle(tr("runtime_check"))
-                            .setMessage(tr("runtime_missing") + mcDir.getAbsolutePath() + "/runtime/")
-                            .setPositiveButton(tr("open_site"), (d, w) -> openUrl("https://etqwfd.github.io/NebulaLauncher/"))
-                            .setNegativeButton(tr("got_it"), null)
-                            .show();
+                    log("运行栈检测：首次使用，将自动安装内置运行时");
+                    toast(tr("installing_runtime"));
+                    new Thread(() -> {
+                        try {
+                            ri.install(bytes -> { });
+                            runOnUiThread(() -> toast(tr("runtime_ok")));
+                        } catch (Exception e) {
+                            log("内置运行时安装失败：" + e.getMessage());
+                            runOnUiThread(() -> toast(tr("runtime_install_fail") + ": " + e.getMessage()));
+                        }
+                    }).start();
                 }
             });
         }).start();
@@ -1669,97 +1674,57 @@ public class MainActivity extends Activity {
             File vj = new File(mcDir, "versions/" + vid + "/" + vid + ".json");
             JSONObject vdata = new JSONObject(new String(Files.readAllBytes(vj.toPath()), "UTF-8"));
             final String cmd = buildLaunchCommand(vid, vdata);
-            final File jre = new File(mcDir, "runtime/jre/bin/java");
             log("启动命令已生成：" + cmd.substring(0, Math.min(cmd.length(), 200)));
-            if (!jre.exists()) {
-                // 运行栈未安装：引导
-                setBusy(false, tr("checking_runtime"));
-                new AlertDialog.Builder(this)
-                        .setTitle(tr("runtime_check"))
-                        .setMessage(tr("runtime_missing") + mcDir.getAbsolutePath() + "/runtime/\n\n" + tr("launch_info"))
-                        .setPositiveButton(tr("open_site"), (d, w) -> openUrl("https://etqwfd.github.io/NebulaLauncher/"))
-                        .setNegativeButton(tr("got_it"), null)
-                        .show();
+
+            // v1.4.0：内置运行时（JRE21 + 图形栈已随 APK 内置，无需用户下载）
+            final RuntimeInstaller ri = new RuntimeInstaller(this);
+            if (!ri.jreInstalled()) {
+                setBusy(true, tr("installing_runtime"));
+                new Thread(() -> {
+                    try {
+                        ri.install(bytes -> { });
+                        runOnUiThread(() -> {
+                            setBusy(false, tr("runtime_ok"));
+                            startRender(vid);
+                        });
+                    } catch (Exception e) {
+                        log("内置运行时安装失败：" + e.getMessage());
+                        runOnUiThread(() -> {
+                            setBusy(false, tr("launch_prepare_fail"));
+                            toast(tr("runtime_install_fail") + ": " + e.getMessage());
+                        });
+                    }
+                }).start();
                 return;
             }
-            // 真实启动：运行栈 java 执行主类，启动后启动器自动让位（finish 本界面）
-            setBusy(true, tr("launching"));
-            btnLaunch.setEnabled(false);
-            new Thread(() -> {
-                try {
-                    java.util.List<String> cmdParts = new ArrayList<>();
-                    cmdParts.add(jre.getAbsolutePath());
-                    cmdParts.add("-Xmx" + memMb + "M");
-                    cmdParts.add("-Xms" + Math.max(memMb / 4, 256) + "M");
-                    Collections.addAll(cmdParts, JVM_FLAGS);
-                    File nativesDir = new File(mcDir, "versions/" + vid + "/natives");
-                    if (nativesDir.isDirectory()) {
-                        cmdParts.add("-Djava.library.path=" + nativesDir.getAbsolutePath());
-                    }
-                    StringBuilder cp = new StringBuilder();
-                    JSONArray libs = vdata.optJSONArray("libraries");
-                    if (libs != null) {
-                        for (int i = 0; i < libs.length(); i++) {
-                            JSONObject lib = libs.getJSONObject(i);
-                            if (!rulesOk(lib)) continue;
-                            String path = mavenPath(lib.optString("name", ""));
-                            if (path.isEmpty()) continue;
-                            File f = new File(mcDir, "libraries/" + path);
-                            if (f.exists()) {
-                                if (cp.length() > 0) cp.append(":");
-                                cp.append(f.getAbsolutePath());
-                            }
-                        }
-                    }
-                    File cj = new File(mcDir, "versions/" + vid + "/" + vid + ".jar");
-                    if (cp.length() > 0) cp.append(":");
-                    cp.append(cj.getAbsolutePath());
-                    cmdParts.add("-cp");
-                    cmdParts.add(cp.toString());
-                    int acctPos = spAccount.getSelectedItemPosition();
-                    String username = etName.getText().toString().trim();
-                    if (username.isEmpty()) username = "Steve";
-                    String authUuid = UUID.nameUUIDFromBytes(("OfflinePlayer:" + username).getBytes()).toString().replace("-", "");
-                    if (acctPos == 1) {
-                        File aj = new File(mcDir, "runtime/authlib-injector.jar");
-                        if (aj.exists()) cmdParts.add("-javaagent:" + aj.getAbsolutePath() + "=" + etServer.getText().toString().trim());
-                        cmdParts.add("-Dauthlib-injector.allow-url-paste=true");
-                    }
-                    cmdParts.add(vdata.optString("mainClass", "net.minecraft.client.main.Main"));
-                    cmdParts.add("--gameDir"); cmdParts.add(mcDir.getAbsolutePath());
-                    cmdParts.add("--assetsDir"); cmdParts.add(new File(mcDir, "assets").getAbsolutePath());
-                    cmdParts.add("--assetIndex"); cmdParts.add(vdata.optJSONObject("assetIndex") != null
-                            ? vdata.optJSONObject("assetIndex").optString("id", "legacy") : "legacy");
-                    cmdParts.add("--uuid"); cmdParts.add(authUuid);
-                    cmdParts.add("--accessToken"); cmdParts.add("0");
-                    cmdParts.add("--username"); cmdParts.add(username);
-                    cmdParts.add("--version"); cmdParts.add(vid);
-
-                    ProcessBuilder pb = new ProcessBuilder(cmdParts);
-                    pb.directory(mcDir);
-                    File logF = new File(mcDir, "game.log");
-                    pb.redirectErrorStream(true);
-                    pb.redirectOutput(logF);
-                    Process proc = pb.start();
-                    log("游戏进程已启动：" + proc + "，启动器自动让位");
-                    runOnUiThread(() -> {
-                        setBusy(false, tr("launched_yield"));
-                        if (autoYield) {
-                            // 自动让位：启动器退出前台，只留游戏运行
-                            moveTaskToBack(true);
-                        }
-                    });
-                } catch (Exception e) {
-                    final String err = e.getMessage();
-                    log("游戏启动失败：" + err);
-                    runOnUiThread(() -> {
-                        setBusy(false, tr("launch_prepare_fail"));
-                        btnLaunch.setEnabled(true);
-                        toast(tr("launch_prepare_fail") + ": " + err);
-                    });
-                }
-            }).start();
+            startRender(vid);
         } catch (Exception e) {
+            toast(tr("launch_prepare_fail") + ": " + e.getMessage());
+        }
+    }
+
+    /** 打开渲染容器（内置 JVM 真实启动游戏，启动器让位）。 */
+    void startRender(String vid) {
+        try {
+            int acctPos = spAccount.getSelectedItemPosition();
+            String uname = etName.getText().toString().trim();
+            if (uname.isEmpty()) uname = "Steve";
+            Intent it = new Intent(this, RenderActivity.class);
+            it.putExtra("vid", vid);
+            it.putExtra("username", uname);
+            it.putExtra("ram", memMb);
+            it.putExtra("account", acctPos);
+            it.putExtra("server", etServer.getText().toString().trim());
+            it.putExtra("pwd", etPwd.getText().toString());
+            setBusy(true, tr("launching"));
+            startActivity(it);
+            // 启动器自动让位
+            if (autoYield) {
+                new android.os.Handler(getMainLooper()).postDelayed(() -> moveTaskToBack(true), 1500);
+            }
+            setBusy(false, tr("launched_yield"));
+        } catch (Exception e) {
+            setBusy(false, tr("launch_prepare_fail"));
             toast(tr("launch_prepare_fail") + ": " + e.getMessage());
         }
     }
